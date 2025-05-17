@@ -3,32 +3,33 @@
 import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function AntesYDespues() {
   // Datos de transformaciones
   const transformaciones = [
     {
       id: 1,
-      titulo: "Renovación Oficinas Corporativas",
+      titulo: "Piedras",
       descripcion:
-        "Transformación completa de oficinas antiguas en un espacio moderno, colaborativo y eficiente energéticamente.",
-      imagenAntes: "residenciales.jpg",
-      imagenDespues: "modulares.png",
+        "Se trata de una intervención sobre una cocina en un edificio histórico.",
+      imagenAntes: "piedrasantes.jpg",
+      imagenDespues: "piedrasdespues.jpg",
     },
     {
       id: 2,
-      titulo: "Ampliación Planta Industrial",
+      titulo: "Fundación SI",
       descripcion:
         "Expansión y modernización de instalaciones industriales para aumentar la capacidad productiva en un 40%.",
-      imagenAntes: "/images/antes-industrial.jpg",
-      imagenDespues: "/images/despues-industrial.jpg",
+      imagenAntes: "/giriboneantes.jpg",
+      imagenDespues: "/giribonedespues.jpg",
     },
     {
       id: 3,
-      titulo: "Remodelación Casa Familiar",
+      titulo: "Lavalle 3644",
       descripcion: "Rediseño completo de vivienda tradicional para adaptarla a las necesidades de una familia moderna.",
-      imagenAntes: "/images/antes-casa.jpg",
-      imagenDespues: "/images/despues-casa.jpg",
+      imagenAntes: "/lavalleantes.jpg",
+      imagenDespues: "/lavalledespues.jpg",
     },
   ]
 
@@ -115,7 +116,7 @@ export default function AntesYDespues() {
   const activeProject = transformaciones[activeIndex]
 
   return (
-    <section id="antes-despues" className="bg-black text-white py-24 px-6">
+    <section className="bg-black text-white py-24 px-6" id="AntesyDespues">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -139,7 +140,7 @@ export default function AntesYDespues() {
               className={`px-6 py-2 rounded-full uppercase text-sm tracking-wider transition-all duration-300 ${
                 activeIndex === index
                   ? "bg-bordo text-white"
-                  : "bg-transparent text-white/70 hover:text-white border border-white/30 hover:border-white"
+                  : "bg-transparent text-white/70 hover:text-bordo border border-white/30 hover:border-bordo"
               }`}
             >
               {project.titulo}
@@ -151,7 +152,7 @@ export default function AntesYDespues() {
         <div className="max-w-4xl mx-auto">
           <div
             ref={containerRef}
-            className="relative h-[400px] md:h-[500px] overflow-hidden cursor-col-resize rounded-lg select-none"
+            className="relative h-[400px] md:h-[550px] overflow-hidden cursor-col-resize rounded-lg select-none"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -162,7 +163,7 @@ export default function AntesYDespues() {
           >
             {/* Imagen "Después" (capa inferior) */}
             <div className="absolute inset-0">
-              <img
+              <Image
                 src={activeProject.imagenDespues || "/placeholder.svg"}
                 alt={`${activeProject.titulo} - Después`}
                 className="w-full h-full object-cover"
@@ -173,7 +174,7 @@ export default function AntesYDespues() {
 
             {/* Imagen "Antes" (capa superior con clip-path) */}
             <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>
-              <img
+              <Image
                 src={activeProject.imagenAntes || "/placeholder.svg"}
                 alt={`${activeProject.titulo} - Antes`}
                 className="w-full h-full object-cover"

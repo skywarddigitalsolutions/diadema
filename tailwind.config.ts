@@ -1,17 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-
-
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  darkMode: ["class"],
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/**/*.{ts,tsx}",
-    "*.{js,ts,jsx,tsx,mdx}",
-  ],
-  prefix: "",
+  // ... el resto igual
   theme: {
     container: {
       center: true,
@@ -38,6 +28,10 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      // Aquí agregamos la fuente playfair:
+      fontFamily: {
+        playfair: ['var(--font-playfair)', ...fontFamily.sans],
       },
     },
   },

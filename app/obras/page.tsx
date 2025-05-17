@@ -17,21 +17,21 @@ export default function ObrasPage() {
       titulo: "Residenciales",
       descripcion: "Viviendas unifamiliares, edificios multifamiliares y complejos residenciales.",
       imagen: "/residenciales.jpg",
-      color: "from-bordo/80 to-bordo-dark/80",
+      color: "from-black/20 to-black/80",
     },
     {
       id: "industriales",
       titulo: "Industriales",
       descripcion: "Plantas de producción, centros logísticos y complejos industriales.",
       imagen: "/industriales.jpg",
-      color: "from-bordo/80 to-bordo-dark/80",
+      color: "from-black/20 to-black/80",
     },
     {
       id: "modulares",
       titulo: "Modulares",
       descripcion: "Construcciones prefabricadas, modulares y de rápida instalación.",
       imagen: "/modulares.png",
-      color: "from-bordo/80 to-bordo-dark/80",
+      color: "from-black/20 to-black/80",
     },
   ]
 
@@ -87,7 +87,7 @@ export default function ObrasPage() {
 
                 <Link
                   href={`/obras/${categoria.id}`}
-                  className="inline-block border border-white hover:border-bordo hover:bg-bordo px-8 py-3 text-white transition-all duration-300"
+                  className="inline-block border border-white rounded-lg hover:border-bordo hover:bg-bordo px-8 py-3 text-white transition-all duration-300"
                 >
                   Ver obras
                 </Link>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function ContactCTASection() {
   return (
-    <section className="relative bg-black py-24 px-6">
+    <section className="relative bg-black py-24 px-6" id='Contacto'>
       {/* blur overlay */}
       <div className="absolute inset-0 bg-black/60 backdrop-blur-md"></div>
       <div className="relative z-10 max-w-3xl mx-auto text-center text-white">

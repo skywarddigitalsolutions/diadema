@@ -1,32 +1,31 @@
+/* app/globals.css */
+
+/* 1) Importa todo Tailwind CSS v4 en una línea */
 @import "tailwindcss";
 
+/* 2) Define tus extensiones de tema (colors, spacing, etc.) */
+@theme {
+  --color-bordo:       #9D2235;
+  --color-bordo-dark:  #7A1A29;
+}
+
+/* 3) (Opcional) Tus variables y animaciones propias */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
-
-
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
-
-
-
 @keyframes fade-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
-
 .animate-fade-down {
   animation: fade-down 0.3s ease-out;
 }
+
+/* 4) El resto de tu CSS custom… */

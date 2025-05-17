@@ -39,7 +39,7 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold uppercase tracking-wide mb-4">Contacto</h4>
           <ul className="space-y-2 text-sm">
-            <li>📍 Lambare 1055, 1° of. 1, CABA</li>
+            <li>📍CABA</li>
             <li>
               ✉️{' '}
               <a href="mailto:info@diademarq.com.ar" className="hover:text-white transition">

@@ -3,6 +3,7 @@
 import { useState, useLayoutEffect, useRef, useEffect } from "react"
 import { Menu, X, ChevronDown } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 const navItems = [
   { label: "Inicio", href: "/" },
@@ -126,7 +127,7 @@ export default function Navbar() {
                         {dropdownItems.map((dropItem) => (
                           <Link key={dropItem.label} href={dropItem.href} className="block group w-40">
                             <div className="overflow-hidden rounded-md mb-2">
-                              <img
+                              <Image
                                 src={dropItem.image || "/placeholder.svg"}
                                 alt={dropItem.label}
                                 className="w-full h-28 object-cover group-hover:scale-105 transition-transform duration-300"

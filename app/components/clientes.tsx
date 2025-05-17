@@ -1,18 +1,18 @@
 "use client"
 
-import { useRef, useEffect, useState } from "react"
+import { useRef, useEffect } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 
 export default function ClientesSection() {
   // Datos de clientes
   const clientes = [
-    { nombre: "Mercado Libre", logo: "/images/logo-mercadolibre.png" },
-    { nombre: "Techint", logo: "/images/logo-techint.png" },
-    { nombre: "YPF", logo: "/images/logo-ypf.png" },
-    { nombre: "Arcor", logo: "/images/logo-arcor.png" },
-    { nombre: "Globant", logo: "/images/logo-globant.png" },
-    { nombre: "Tenaris", logo: "/images/logo-tenaris.png" },
+    { nombre: "Pampa Energía", logo: "/images/pampaenergia.png" },
+    { nombre: "Fundación SI", logo: "/images/fundacionsi.png" },
+    { nombre: "Estellantis", logo: "/images/estellantis.png" },
+    { nombre: "Pampa Energía", logo: "/images/pampaenergia.png" },
+    { nombre: "Fundación SI", logo: "/images/fundacionsi.png" },
+    { nombre: "Estellantis", logo: "/images/estellantis.png" },
   ]
 
   const carouselRef = useRef<HTMLDivElement>(null)
@@ -52,7 +52,7 @@ export default function ClientesSection() {
   }, [])
 
   return (
-    <section className="bg-black text-white py-24 px-6">
+    <section className="bg-black text-white py-24 px-6" id="Clientes">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -93,56 +93,4 @@ export default function ClientesSection() {
   )
 }
 
-// Componente para contador animado
-function CounterItem({ value, label, suffix = "" }: { value: number; label: string; suffix?: string }) {
-  const [count, setCount] = useState(0)
-  const counterRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          let startValue = 0
-          const duration = 2000 // ms
-          const increment = Math.ceil(value / (duration / 16)) // 60fps aproximadamente
-
-          const timer = setInterval(() => {
-            startValue += increment
-            if (startValue >= value) {
-              setCount(value)
-              clearInterval(timer)
-            } else {
-              setCount(startValue)
-            }
-          }, 16)
-
-          return () => clearInterval(timer)
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    if (counterRef.current) {
-      observer.observe(counterRef.current)
-    }
-
-    return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current)
-      }
-    }
-  }, [value])
-
-  // Formatear número con separadores de miles
-  const formattedCount = count.toLocaleString()
-
-  return (
-    <div ref={counterRef} className="text-center">
-      <div className="text-4xl md:text-5xl font-bold text-bordo mb-2">
-        {formattedCount}
-        {suffix}
-      </div>
-      <p className="text-gray-400 uppercase tracking-wider text-sm">{label}</p>
-    </div>
-  )
-}

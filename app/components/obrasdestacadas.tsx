@@ -4,39 +4,40 @@ import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function ObrasDestacadas() {
   // Datos de proyectos destacados
   const proyectosDestacados = [
     {
       id: 1,
-      titulo: "Nave Industrial Metalúrgica",
-      categoria: "industrial",
-      ubicacion: "Pilar, Buenos Aires",
+      titulo: "OZANAM 446",
+      categoria: "residencial",
+      ubicacion: "Morón, Buenos Aires",
       anio: "2022",
       descripcion:
-        "Diseño y construcción de nave industrial de 1500m² para empresa metalúrgica, con oficinas administrativas y planta de producción.",
-      imagen: "/images/proyecto-industrial-1.jpg",
+        "Se realizó una reformación del quincho, transformando en comedor y cocina, con un diseño moderno y funcional.",
+      imagen: "/ozanam.jpg",
     },
     {
       id: 2,
-      titulo: "Casa Moderna Nordelta",
+      titulo: "Glenmore",
       categoria: "residencial",
-      ubicacion: "Nordelta, Buenos Aires",
+      ubicacion: "Pilar, Buenos Aires",
       anio: "2023",
       descripcion:
-        "Residencia contemporánea de 320m² con diseño minimalista, amplios espacios y eficiencia energética.",
-      imagen: "/images/proyecto-residencial-1.jpg",
+        "En proceso de construcción, este proyecto residencial destaca por su diseño contemporáneo y funcionalidad.",
+      imagen: "/glenmore.jpeg",
     },
     {
       id: 3,
-      titulo: "Centro Logístico Mercado Libre",
+      titulo: "Veredas I",
       categoria: "industrial",
-      ubicacion: "San Martín, Buenos Aires",
+      ubicacion: "Maipú, Buenos Aires",
       anio: "2021",
       descripcion:
-        "Centro de distribución de 3500m² con tecnología de última generación para optimización de procesos logísticos.",
-      imagen: "/images/proyecto-industrial-2.jpg",
+        "Se trata de una zona en desuso, donde se proyectaron veredas perimetrales",
+      imagen: "/veredas.jpg",
     },
   ]
 
@@ -71,7 +72,7 @@ export default function ObrasDestacadas() {
   }, [isAutoPlaying, length])
 
   return (
-    <section className="bg-black text-white py-24 px-6 overflow-hidden relative">
+    <section className="bg-black text-white py-24 px-6 overflow-hidden relative" id="ObrasDestacadas">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -95,14 +96,14 @@ export default function ObrasDestacadas() {
             {proyectosDestacados.map((proyecto) => (
               <div key={proyecto.id} className="flex-shrink-0 w-full px-4">
                 <div className="relative overflow-hidden rounded-2xl group h-[400px] md:h-[500px]">
-                  <img
+                  <Image
                     src={proyecto.imagen || "/placeholder.svg"}
                     alt={proyecto.titulo}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 w-full p-8 z-10">
-                    <span className="inline-block bg-bordo text-white px-3 py-1 text-xs uppercase tracking-wider mb-4">
+                    <span className="inline-block bg-bordo rounded-lg text-white px-3 py-1 text-xs uppercase tracking-wider mb-4">
                       Proyecto destacado
                     </span>
                     <h3 className="text-3xl md:text-4xl font-playfair uppercase tracking-[0.05em] mb-4">
@@ -111,7 +112,7 @@ export default function ObrasDestacadas() {
                     <p className="text-white/80 max-w-xl mb-6">{proyecto.descripcion}</p>
                     <Link
                       href={`/obras/${proyecto.id}`}
-                      className="inline-block border border-bordo text-bordo px-6 py-3 rounded-full uppercase text-sm font-medium hover:bg-bordo hover:text-white transition-colors duration-300"
+                      className="inline-block border border-white text-white px-6 py-3 rounded-full uppercase text-sm font-medium hover:bg-bordo hover:text-white hover:border-bordo transition-colors duration-300"
                     >
                       Ver proyecto
                     </Link>

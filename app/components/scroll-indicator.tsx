@@ -44,7 +44,7 @@ export default function ScrollIndicator() {
 
         {/* Indicadores de sección */}
         <div className="mt-6 flex flex-col items-center space-y-4">
-          {["inicio", "obras", "antes-despues", "nosotros", "contacto"].map((section) => (
+          {["Inicio", "Valores", "Obras", "ObrasDestacadas", "AntesyDespues", "Clientes", "Contacto"].map((section) => (
             <a
               key={section}
               href={`#${section}`}

@@ -6,52 +6,9 @@ import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import Navbar from "@/app/components/navbar"
 import Footer from "@/app/components/footer"
-
+import { obrasResidenciales } from "@/data"
 // Dummy data for proyectosResidenciales
-const proyectosResidenciales = [
-  {
-    id: "casa-1",
-    titulo: "Casa Moderna en el Bosque",
-    ubicacion: "Bariloche, Argentina",
-    anio: 2023,
-    imagen: "/images/residencial_1.jpg",
-  },
-  {
-    id: "edificio-1",
-    titulo: "Edificio de Departamentos Premium",
-    ubicacion: "Buenos Aires, Argentina",
-    anio: 2022,
-    imagen: "/images/residencial_2.jpg",
-  },
-  {
-    id: "loft-1",
-    titulo: "Loft Industrial con Vistas",
-    ubicacion: "Rosario, Argentina",
-    anio: 2021,
-    imagen: "/images/residencial_3.jpg",
-  },
-  {
-    id: "casa-2",
-    titulo: "Casa de Campo Sustentable",
-    ubicacion: "Mendoza, Argentina",
-    anio: 2024,
-    imagen: "/images/residencial_4.jpg",
-  },
-  {
-    id: "edificio-2",
-    titulo: "Complejo Residencial Familiar",
-    ubicacion: "Córdoba, Argentina",
-    anio: 2023,
-    imagen: "/images/residencial_5.jpg",
-  },
-  {
-    id: "loft-2",
-    titulo: "Loft Minimalista en el Centro",
-    ubicacion: "Salta, Argentina",
-    anio: 2022,
-    imagen: "/images/residencial_6.jpg",
-  },
-]
+
 
 export default function ObrasResidencialesPage() {
   const [filtro, setFiltro] = useState("todos")
@@ -106,9 +63,9 @@ export default function ObrasResidencialesPage() {
       <section className="py-8 md:py-16">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {proyectosResidenciales.map((proyecto, index) => (
+            {obrasResidenciales.map((proyecto) => (
               <div key={proyecto.id}>
-                <Link href={`/obras/residenciales/${proyecto.id}`} className="block group">
+                <Link href={`/obras/residenciales/${proyecto.slug}`} className="block group">
                   <div className="relative overflow-hidden rounded-lg mb-4">
                     <Image
                       src={proyecto.imagen || "/placeholder.svg"}
@@ -119,7 +76,7 @@ export default function ObrasResidencialesPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                       <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <span className="inline-block bg-bordo text-white px-3 py-1 text-xs uppercase tracking-wider mb-2">
+                        <span className="inline-block bg-bordo rounded-lg text-white px-3 py-1 text-xs uppercase tracking-wider mb-2">
                           Ver detalles
                         </span>
                       </div>
