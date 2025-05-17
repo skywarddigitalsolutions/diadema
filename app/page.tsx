@@ -9,7 +9,7 @@ import ScrollIndicator from "./components/scroll-indicator";
 import Slides from "./components/slides";
 import Stats from "./components/stats";
 import Valores from "./components/valores";
-
+import Button from "./components/button";
 export default function Home() {
   return (
    <>
@@ -23,6 +23,7 @@ export default function Home() {
    <Slides />
    <ClientesSection />
    <ContactCTASection />
+   <Button />
   <Footer />
    </>
   );

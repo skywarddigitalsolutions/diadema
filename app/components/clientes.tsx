@@ -7,12 +7,12 @@ import { motion } from "framer-motion"
 export default function ClientesSection() {
   // Datos de clientes
   const clientes = [
-    { nombre: "Pampa Energía", logo: "/images/pampaenergia.png" },
-    { nombre: "Fundación SI", logo: "/images/fundacionsi.png" },
-    { nombre: "Estellantis", logo: "/images/estellantis.png" },
-    { nombre: "Pampa Energía", logo: "/images/pampaenergia.png" },
-    { nombre: "Fundación SI", logo: "/images/fundacionsi.png" },
-    { nombre: "Estellantis", logo: "/images/estellantis.png" },
+    { nombre: "Pampa Energía", logo: "/pampaenergia.png" },
+    { nombre: "Fundación SI", logo: "/fundacionsi.jpg" },
+    { nombre: "Estellantis", logo: "/stellanis.png" },
+    { nombre: "Pampa Energía", logo: "/pampaenergia.png" },
+    { nombre: "Fundación SI", logo: "/fundacionsi.jpg" },
+    { nombre: "Estellantis", logo: "/stellanis.png" },
   ]
 
   const carouselRef = useRef<HTMLDivElement>(null)
@@ -75,7 +75,7 @@ export default function ClientesSection() {
             {[...clientes, ...clientes].map((client, index) => (
               <div
                 key={`${client.nombre}-${index}`}
-                className="flex-shrink-0 flex items-center justify-center w-32 h-20 transition-all duration-300 filter grayscale hover:grayscale-0"
+                className="flex-shrink-0 flex items-center justify-center w-32 h-20 transition-all duration-300"
               >
                 <Image
                   src={client.logo || "/placeholder.svg"}

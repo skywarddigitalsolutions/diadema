@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-
+import LazyVideo from './LazyVideo';
 export default function Hero() {
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -12,9 +12,10 @@ export default function Hero() {
     <section className="relative min-h-screen bg-black text-white flex items-center justify-center overflow-hidden" id='Inicio'>
       {/* Imagen de fondo */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-30"
-        style={{ backgroundImage: "url('/fondo.png')" }}
-      ></div>
+        className="absolute inset-0 bg-cover bg-center opacity-40"
+      >
+        <LazyVideo src="video.mp4"/>
+      </div>
 
       {/* Capa de degradado para contraste */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0" />
@@ -34,7 +35,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 1 }}
-          className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-bordo font-light"
+          className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300 font-light"
         >
           Viviendas modulares hechas a medida. Diseño, eficiencia y detalle, desde fábrica hasta tu lugar.
         </motion.p>

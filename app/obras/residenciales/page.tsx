@@ -17,7 +17,7 @@ export default function ObrasResidencialesPage() {
     <div className="bg-black text-white">
     <Navbar />
       {/* Back Button */}
-      <div className="fixed top-32 left-6 md:left-12 z-40">
+      <div className="fixed top-20 left-6 md:left-4 z-40">
         <Link
           href="/obras"
           className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300"

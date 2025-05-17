@@ -9,6 +9,7 @@ export interface Obra {
   categoria: string;
   anio: string;
   ubicacion: string;
+  imagenes?: string[]
 }
 
 export const obrasResidenciales: Obra[] = [
@@ -21,6 +22,15 @@ export const obrasResidenciales: Obra[] = [
     categoria: 'Residenciales',
     anio: '2022',
     ubicacion: 'Morón, Buenos Aires',
+    imagenes: [
+      "/ozanam.jpg",
+      "/residenciales.jpg",
+      "/piedrasantes.jpg",
+      "/piedrasdespues.jpg",
+      "/ozanam.jpg",
+      "/ozanam.jpg",
+
+    ]
   },
   {
     id: 2,
@@ -31,6 +41,7 @@ export const obrasResidenciales: Obra[] = [
     categoria: 'Residenciales',
     anio: '2023',
     ubicacion: 'Pilar, Buenos Aires',
+    imagenes: []
   },
 
 

@@ -32,6 +32,8 @@ export default function ObrasHome() {
             src="/residenciales.jpg"
             alt="Obras Domiciliarias"
             className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
+            height={600} 
+            width={800}
           />
           {/* Overlay */}
           <div
@@ -72,6 +74,8 @@ export default function ObrasHome() {
             src="/industriales.jpg"
             alt="Obras Industriales"
             className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
+            height={600}
+            width={800}
           />
           {/* Overlay */}
           <div
@@ -112,6 +116,8 @@ export default function ObrasHome() {
             src="/modulares.png"
             alt="Obras Modulares"
             className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
+            height={600}
+            width={800}
           />
           {/* Overlay */}
           <div

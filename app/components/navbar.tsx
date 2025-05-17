@@ -78,7 +78,7 @@ export default function Navbar() {
       {/* DIADEMA EN DESKTOP */}
       {!isMobile && (
         <div className="fixed top-6 left-6 z-50">
-          <Link href="/" className="text-white text-2xl font-serif uppercase tracking-widest">
+          <Link href="/" className="text-white text-2xl font-Work_Sans uppercase tracking-widest">
             Diadema
           </Link>
         </div>
@@ -131,6 +131,8 @@ export default function Navbar() {
                                 src={dropItem.image || "/placeholder.svg"}
                                 alt={dropItem.label}
                                 className="w-full h-28 object-cover group-hover:scale-105 transition-transform duration-300"
+                                height={112}
+                                width={160}
                               />
                             </div>
                             <p className="text-white text-sm uppercase tracking-wide group-hover:text-gray-300">

@@ -13,8 +13,8 @@ export default function AntesYDespues() {
       titulo: "Piedras",
       descripcion:
         "Se trata de una intervención sobre una cocina en un edificio histórico.",
-      imagenAntes: "piedrasantes.jpg",
-      imagenDespues: "piedrasdespues.jpg",
+      imagenAntes: "/piedrasantes.jpg",
+      imagenDespues: "/piedrasdespues.jpg",
     },
     {
       id: 2,
@@ -114,7 +114,6 @@ export default function AntesYDespues() {
   }, [])
 
   const activeProject = transformaciones[activeIndex]
-
   return (
     <section className="bg-black text-white py-24 px-6" id="AntesyDespues">
       <div className="max-w-7xl mx-auto">
@@ -164,10 +163,12 @@ export default function AntesYDespues() {
             {/* Imagen "Después" (capa inferior) */}
             <div className="absolute inset-0">
               <Image
-                src={activeProject.imagenDespues || "/placeholder.svg"}
+                src={activeProject.imagenDespues}
                 alt={`${activeProject.titulo} - Después`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 draggable="false"
+                height={550}
+                width={800}
               />
               <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 text-sm rounded">Después</div>
             </div>
@@ -175,10 +176,12 @@ export default function AntesYDespues() {
             {/* Imagen "Antes" (capa superior con clip-path) */}
             <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>
               <Image
-                src={activeProject.imagenAntes || "/placeholder.svg"}
+                src={activeProject.imagenAntes}
                 alt={`${activeProject.titulo} - Antes`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 draggable="false"
+                height={550}
+                width={800}
               />
               <div
                 className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 text-sm rounded"
