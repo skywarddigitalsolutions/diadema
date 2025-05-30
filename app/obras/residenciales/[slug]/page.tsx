@@ -7,38 +7,23 @@ import Navbar from "@/app/components/navbar"
 import Footer from "@/app/components/footer"
 import ImageGallery from "./image-gallery"
 
-interface Props {
-  params: { slug: string }
+interface ObraDetailParams {
+  slug: string;
 }
 
-export default function ObraDetailPage({ params }: Props) {
-  const obra = obrasResidenciales.find((obra) => obra.slug === params.slug)
+export default async function  ObraDetailPage({ params }: { params: Promise<ObraDetailParams> }) {
+  const { slug } = await params;
+  const obra = obrasResidenciales.find((obra) => obra.slug === slug);
 
   if (!obra) return notFound()
 
-  // Función para generar rutas de imágenes adicionales basadas en el slug
-  // Esta función simula tener múltiples imágenes hasta que las descargues
-  const getImagenes = (slug: string): string[] => {
-    // Por ahora, solo devolvemos la imagen principal
-    // Cuando descargues las imágenes, puedes reemplazar esto con las rutas reales
+  const getImagenes = (): string[] => {
     const imagenes = [obra.imagen]
-
-    // Ejemplo de cómo nombrar las imágenes adicionales cuando las tengas
-    // Descomenta y ajusta esto cuando tengas las imágenes
-    /*
-    for (let i = 1; i <= 9; i++) {
-      imagenes.push(`/${slug}-${i}.jpg`)
-    }
-    */
-
-    // Si tienes el campo imagenes en tu objeto obra, puedes usar esto:
-    // return obra.imagenes || [obra.imagen];
-
     return imagenes
   }
 
   // Obtener imágenes para este proyecto
-  const imagenes = getImagenes(obra.slug)
+  const imagenes = getImagenes();
 
   // Datos técnicos del proyecto
   const datosTecnicos = [
