@@ -123,7 +123,7 @@ export default function Navbar() {
                       {/* Puente visual para evitar espacios entre el enlace y el dropdown */}
                       <div className="absolute w-full h-4 bottom-0 translate-y-full"></div>
 
-                      <div className="absolute top-full left-0 mt-4 flex space-x-4 bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-4 z-50">
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 flex space-x-4 bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-4 z-50">
                         {dropdownItems.map((dropItem) => (
                           <Link key={dropItem.label} href={dropItem.href} className="block group w-40">
                             <div className="overflow-hidden rounded-md mb-2">

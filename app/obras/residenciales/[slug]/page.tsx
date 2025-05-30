@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 import { obrasResidenciales } from "@/data"
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronLeft, ChevronRight, MapPin, Calendar, Ruler } from "lucide-react"
+import { ChevronLeft, ChevronRight, MapPin, Calendar, Ruler, CalendarIcon } from "lucide-react"
 import Navbar from "@/app/components/navbar"
 import Footer from "@/app/components/footer"
 import ImageGallery from "./image-gallery"
@@ -44,11 +44,8 @@ export default function ObraDetailPage({ params }: Props) {
   const datosTecnicos = [
     { icon: <MapPin className="h-5 w-5" />, label: "Ubicación", value: obra.ubicacion || "No especificada" },
     { icon: <Calendar className="h-5 w-5" />, label: "Año", value: obra.anio || "No especificado" },
-    {
-      icon: <Ruler className="h-5 w-5" />,
-      label: "Categoría",
-      value: obra.categoria || "No especificada",
-    },
+    { icon: <Ruler className="h-5 w-5" />, label: "Categoría", value: obra.categoria || "No especificada",},
+    { icon: <CalendarIcon className="h-5 w-5" />, label: "Superficie", value: obra.superficie || "No especificada" },
   ]
 
   // Encontrar obras relacionadas (misma categoría)

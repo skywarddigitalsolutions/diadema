@@ -24,7 +24,7 @@ export default function Home() {
    <ClientesSection />
    <ContactCTASection />
    <Button />
-  <Footer />
+   <Footer />
    </>
   );
 }

@@ -1,4 +1,3 @@
-// app/residencial/data.ts
 
 export interface Obra {
   id: number;
@@ -9,8 +8,8 @@ export interface Obra {
   categoria: string;
   anio: string;
   ubicacion: string;
-  imagenes?: string[]
-}
+  superficie: string; // Opcional, si no se especifica
+  imagenes?: string[];}
 
 export const obrasResidenciales: Obra[] = [
   {
@@ -22,6 +21,7 @@ export const obrasResidenciales: Obra[] = [
     categoria: 'Residenciales',
     anio: '2022',
     ubicacion: 'Morón, Buenos Aires',
+    superficie: '150 m²',
     imagenes: [
       "/ozanam.jpg",
       "/residenciales.jpg",
@@ -41,6 +41,7 @@ export const obrasResidenciales: Obra[] = [
     categoria: 'Residenciales',
     anio: '2023',
     ubicacion: 'Pilar, Buenos Aires',
+    superficie: '200 m²',
     imagenes: []
   },
 
