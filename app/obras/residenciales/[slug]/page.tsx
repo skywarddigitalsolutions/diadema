@@ -7,11 +7,11 @@ import Navbar from "@/app/components/navbar"
 import Footer from "@/app/components/footer"
 import ImageGallery from "./image-gallery"
 
-interface Props {
+interface ObraDetailParams {
   params: { slug: string }
 }
 
-export default function ObraDetailPage({ params }: Props) {
+export default function ObraDetailPage({ params }: ObraDetailParams) {
   const obra = obrasResidenciales.find((obra) => obra.slug === params.slug)
 
   if (!obra) return notFound()
@@ -24,12 +24,11 @@ export default function ObraDetailPage({ params }: Props) {
     const imagenes = [obra.imagen]
 
     // Ejemplo de cómo nombrar las imágenes adicionales cuando las tengas
-    // Descomenta y ajusta esto cuando tengas las imágenes
-    /*
+   
     for (let i = 1; i <= 9; i++) {
       imagenes.push(`/${slug}-${i}.jpg`)
     }
-    */
+
 
     // Si tienes el campo imagenes en tu objeto obra, puedes usar esto:
     // return obra.imagenes || [obra.imagen];
