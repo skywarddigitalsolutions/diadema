@@ -23,14 +23,7 @@ export default function AntesYDespues() {
         "Expansión y modernización de instalaciones industriales para aumentar la capacidad productiva en un 40%.",
       imagenAntes: "/giriboneantes.jpg",
       imagenDespues: "/giribonedespues.jpg",
-    },
-    {
-      id: 3,
-      titulo: "Lavalle 3644",
-      descripcion: "Rediseño completo de vivienda tradicional para adaptarla a las necesidades de una familia moderna.",
-      imagenAntes: "/lavalleantes.jpg",
-      imagenDespues: "/lavalledespues.jpg",
-    },
+    }
   ]
 
   const [activeIndex, setActiveIndex] = useState(0)
@@ -170,7 +163,6 @@ export default function AntesYDespues() {
                 height={550}
                 width={800}
               />
-              <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 text-sm rounded">Después</div>
             </div>
 
             {/* Imagen "Antes" (capa superior con clip-path) */}
@@ -183,12 +175,6 @@ export default function AntesYDespues() {
                 height={550}
                 width={800}
               />
-              <div
-                className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 text-sm rounded"
-                style={{ maxWidth: `calc(${sliderPosition}% - 2rem)` }}
-              >
-                Antes
-              </div>
             </div>
 
             {/* Slider */}

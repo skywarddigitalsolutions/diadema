@@ -8,19 +8,16 @@ import Footer from "@/app/components/footer"
 import ImageGallery from "./image-gallery"
 
 interface ObraDetailParams {
-  params: { slug: string }
+  slug: string;
 }
 
-export default function ObraDetailPage({ params }: ObraDetailParams) {
-  const obra = obrasResidenciales.find((obra) => obra.slug === params.slug)
+export default async function  ObraDetailPage({ params }: { params: Promise<ObraDetailParams> }) {
+  const { slug } = await params;
+  const obra = obrasResidenciales.find((obra) => obra.slug === slug);
 
   if (!obra) return notFound()
 
-  // Función para generar rutas de imágenes adicionales basadas en el slug
-  // Esta función simula tener múltiples imágenes hasta que las descargues
-  const getImagenes = (slug: string): string[] => {
-    // Por ahora, solo devolvemos la imagen principal
-    // Cuando descargues las imágenes, puedes reemplazar esto con las rutas reales
+  const getImagenes = (): string[] => {
     const imagenes = [obra.imagen]
 
     // Ejemplo de cómo nombrar las imágenes adicionales cuando las tengas
@@ -37,7 +34,7 @@ export default function ObraDetailPage({ params }: ObraDetailParams) {
   }
 
   // Obtener imágenes para este proyecto
-  const imagenes = getImagenes(obra.slug)
+  const imagenes = getImagenes();
 
   // Datos técnicos del proyecto
   const datosTecnicos = [

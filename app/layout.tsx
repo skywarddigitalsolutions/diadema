@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Work_Sans } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 // Solo mantenemos Playfair desde Google Fonts
 const playfair = Playfair_Display({
   variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const workSans = Work_Sans({
-  variable: "--font-work-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });

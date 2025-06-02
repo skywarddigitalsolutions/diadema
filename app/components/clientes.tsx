@@ -8,10 +8,10 @@ export default function ClientesSection() {
   // Datos de clientes
   const clientes = [
     { nombre: "Pampa Energía", logo: "/pampaenergia.png" },
-    { nombre: "Fundación SI", logo: "/fundacionsi.jpg" },
+    { nombre: "Fundación SI", logo: "/fundacionsi.png" },
     { nombre: "Estellantis", logo: "/stellanis.png" },
     { nombre: "Pampa Energía", logo: "/pampaenergia.png" },
-    { nombre: "Fundación SI", logo: "/fundacionsi.jpg" },
+    { nombre: "Fundación SI", logo: "/fundacionsi.png" },
     { nombre: "Estellantis", logo: "/stellanis.png" },
   ]
 
@@ -24,11 +24,11 @@ export default function ClientesSection() {
     const scrollWidth = carouselRef.current.scrollWidth
     const clientWidth = carouselRef.current.clientWidth
 
-    if (scrollWidth <= clientWidth) return // No hay suficiente contenido para desplazar
+    if (scrollWidth <= clientWidth) return
 
     let scrollPosition = 0
     const maxScroll = scrollWidth - clientWidth
-    const scrollSpeed = 0.5 // píxeles por frame
+    const scrollSpeed = 0.5
 
     const animate = () => {
       if (!carouselRef.current) return
