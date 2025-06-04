@@ -18,19 +18,7 @@ export default async function  ObraDetailPage({ params }: { params: Promise<Obra
   if (!obra) return notFound()
 
   const getImagenes = (): string[] => {
-    const imagenes = [obra.imagen]
-
-    // Ejemplo de cómo nombrar las imágenes adicionales cuando las tengas
-   
-    for (let i = 1; i <= 9; i++) {
-      imagenes.push(`/${slug}-${i}.jpg`)
-    }
-
-
-    // Si tienes el campo imagenes en tu objeto obra, puedes usar esto:
-    // return obra.imagenes || [obra.imagen];
-
-    return imagenes
+return obra.imagenes || [obra.imagen];
   }
 
   // Obtener imágenes para este proyecto
@@ -88,7 +76,12 @@ export default async function  ObraDetailPage({ params }: { params: Promise<Obra
       <section className="max-w-4xl mx-auto px-6 py-16">
         <div className="mb-10">
           <h2 className="text-2xl font-semibold text-white mb-4 font-serif">Descripción</h2>
-          <p className="text-gray-400 leading-relaxed">{obra.descripcion}</p>
+          {obra.descripcion.map((frase, index) => (
+            <p key={index} className="text-gray-400 leading-relaxed mb-2">
+              {frase}
+            </p>
+          ))}        
+        
         </div>
 
         {/* Línea divisoria bordo */}

@@ -11,8 +11,6 @@ import { obrasResidenciales } from "@/data"
 
 
 export default function ObrasResidencialesPage() {
-  const [filtro, setFiltro] = useState("todos")
-
   return (
     <div className="bg-black text-white">
     <Navbar />
@@ -40,24 +38,7 @@ export default function ObrasResidencialesPage() {
         </div>
       </section>
 
-      {/* Filtros */}
-      <section className="py-8">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="flex space-x-8 mb-16">
-            {["todos", "casas", "edificios", "lofts"].map((categoria) => (
-              <button
-                key={categoria}
-                onClick={() => setFiltro(categoria)}
-                className={`text-lg relative hover-line ${
-                  filtro === categoria ? "text-bordo" : "text-gray-400 hover:text-white"
-                } transition-colors duration-300`}
-              >
-                {categoria.charAt(0).toUpperCase() + categoria.slice(1)}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* Projects Grid */}
       <section className="py-8 md:py-16">
