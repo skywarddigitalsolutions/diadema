@@ -665,6 +665,16 @@ descripcion: [
    "/Obras/industrial/stellantis/vestuarios/stellantis7.webp",
    "/Obras/industrial/stellantis/vestuarios/stellantis8.webp",
    "/Obras/industrial/stellantis/vestuarios/stellantis9.webp",
+    "/Obras/industrial/stellantis/vestuarios/stellantis10.webp",
+    "/Obras/industrial/stellantis/vestuarios/stellantis11.webp",
+    "/Obras/industrial/stellantis/vestuarios/stellantis12.webp",
+    "/Obras/industrial/stellantis/vestuarios/stellantis13.webp",
+    "/Obras/industrial/stellantis/vestuarios/stellantis14.webp",
+    "/Obras/industrial/stellantis/vestuarios/stellantis15.webp",
+    "/Obras/industrial/stellantis/vestuarios/stellantis16.webp",
+    "/Obras/industrial/stellantis/vestuarios/stellantis17.webp",
+    "/Obras/industrial/stellantis/vestuarios/stellantis18.webp",
+    
   ]
  },
   {
