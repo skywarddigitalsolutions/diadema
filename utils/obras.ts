@@ -1,4 +1,4 @@
-import { Obra } from "@/data";
+import { Obra } from "@/data/data";
 
 export const getRandomItems = (arr: Obra[], n: number) => {
     const arrayCopy = [...arr];

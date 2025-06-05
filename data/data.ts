@@ -212,8 +212,8 @@ descripcion: [],
       "/Obras/residencial/martinez/martinez6.webp",
       "/Obras/residencial/martinez/martinez7.webp",
       "/Obras/residencial/martinez/martinez8.webp",
-      "/Obras/residenciales/martinez/martinez9.webp",
-      "/Obras/residenciales/martinez/martinez10.webp",
+      "/Obras/residencial/martinez/martinez9.webp",
+      "/Obras/residencial/martinez/martinez10.webp",
     ]
   },
 {
@@ -448,7 +448,7 @@ export const obrasIndustriales: Obra[] = [
   ubicacion: '',
   superficie: '',
   imagenes: [
-   "/Obras/industrial/pampa-energia/playones-hormigon/playones-hormigon1.webp",
+    "/Obras/industrial/pampa-energia/playones-hormigon/playones-hormigon1.webp",
     "/Obras/industrial/pampa-energia/playones-hormigon/playones-hormigon2.webp",
     "/Obras/industrial/pampa-energia/playones-hormigon/playones-hormigon3.webp",
     "/Obras/industrial/pampa-energia/playones-hormigon/playones-hormigon4.webp",

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { obrasIndustriales } from "@/data"
+import { obrasIndustriales } from "@/data/data"
 import Image from "next/image"
 import Link from "next/link"
 import { ChevronLeft, ChevronRight, MapPin, Calendar, Ruler, CalendarIcon } from "lucide-react"
@@ -12,14 +12,14 @@ interface ObraDetailParams {
   slug: string;
 }
 
-export default async function  ObraDetailPage({ params }: { params: Promise<ObraDetailParams> }) {
+export default async function ObraDetailPage({ params }: { params: Promise<ObraDetailParams> }) {
   const { slug } = await params;
   const obra = obrasIndustriales.find((obra) => obra.slug === slug);
 
   if (!obra) return notFound()
 
   const getImagenes = (): string[] => {
-return obra.imagenes || [obra.imagen];
+    return obra.imagenes || [obra.imagen];
   }
 
   // Obtener imágenes para este proyecto
@@ -29,7 +29,7 @@ return obra.imagenes || [obra.imagen];
   const datosTecnicos = [
     { icon: <MapPin className="h-5 w-5" />, label: "Ubicación", value: obra.ubicacion || "No especificada" },
     { icon: <Calendar className="h-5 w-5" />, label: "Año", value: obra.anio || "No especificado" },
-    { icon: <Ruler className="h-5 w-5" />, label: "Categoría", value: obra.categoria || "No especificada",},
+    { icon: <Ruler className="h-5 w-5" />, label: "Categoría", value: obra.categoria || "No especificada", },
     { icon: <CalendarIcon className="h-5 w-5" />, label: "Superficie", value: obra.superficie || "No especificada" },
   ]
 
@@ -42,11 +42,11 @@ return obra.imagenes || [obra.imagen];
       {/* Botón de volver con animación sutil */}
       <div className="fixed top-20 left-6 md:left-4 z-40">
         <Link
-          href="/obras"
+          href="/obras/industriales"
           className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300 group"
         >
           <ChevronLeft className="h-5 w-5 transform group-hover:-translate-x-1 transition-transform duration-300" />
-          <span>Volver a categorías</span>
+          <span>Volver a industriales</span>
         </Link>
       </div>
 
@@ -69,7 +69,7 @@ return obra.imagenes || [obra.imagen];
         </div>
       </div>
 
-  
+
       {/* Sección de contenido con grid para información técnica */}
       <section className="max-w-4xl mx-auto px-6 py-16">
         <div className="mb-10">
@@ -78,8 +78,8 @@ return obra.imagenes || [obra.imagen];
             <p key={index} className="text-gray-400 leading-relaxed mb-2">
               {frase}
             </p>
-          ))}        
-        
+          ))}
+
         </div>
 
         {/* Línea divisoria bordo */}
@@ -101,7 +101,7 @@ return obra.imagenes || [obra.imagen];
           </div>
         </div>
 
-        
+
 
         {/* Contenido adicional - Puedes expandir esto con más información cuando la tengas */}
         <div className="prose prose-invert prose-gray max-w-none">
@@ -112,12 +112,12 @@ return obra.imagenes || [obra.imagen];
         </div>
 
       </section>
-            
+
       {/* Galería de imágenes */}
-        <section className="max-w-7xl mx-auto px-6 py-16">
-          <h2 className="text-2xl font-semibold text-white mb-8 font-serif">Galería del Proyecto</h2>
-          <ImageGallery images={imagenes} title={obra.titulo} />
-        </section>
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <h2 className="text-2xl font-semibold text-white mb-8 font-serif">Galería del Proyecto</h2>
+        <ImageGallery images={imagenes} title={obra.titulo} />
+      </section>
 
       {/* Obras relacionadas */}
       {obrasRelacionadas.length > 0 && (

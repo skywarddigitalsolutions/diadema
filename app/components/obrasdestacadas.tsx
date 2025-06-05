@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { obrasIndustriales, obrasModulares, obrasResidenciales } from "@/data"
+import { obrasIndustriales, obrasModulares, obrasResidenciales } from "@/data/data"
 
 export default function ObrasDestacadas() {
 
@@ -14,8 +14,8 @@ export default function ObrasDestacadas() {
     "industriales",
     "modulares"
   ]
-  const proyectosDestacados = [{...obrasResidenciales[0], preSlug: slugs[0]}, {...obrasIndustriales[1], preSlug: slugs[1]}, {...obrasModulares[0], preSlug: slugs[2]}];
-  const [index, setIndex] = useState(0) 
+  const proyectosDestacados = [{ ...obrasResidenciales[0], preSlug: slugs[0] }, { ...obrasIndustriales[1], preSlug: slugs[1] }, { ...obrasModulares[0], preSlug: slugs[2] }];
+  const [index, setIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null)
   const length = proyectosDestacados.length
@@ -124,9 +124,8 @@ export default function ObrasDestacadas() {
                 setIsAutoPlaying(false)
                 setIndex(i)
               }}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                i === index ? "bg-bordo w-8" : "bg-white/30 hover:bg-white/50"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${i === index ? "bg-bordo w-8" : "bg-white/30 hover:bg-white/50"
+                }`}
               aria-label={`Ir a slide ${i + 1}`}
             />
           ))}
