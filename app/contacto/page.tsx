@@ -97,7 +97,7 @@ export default function ContactoPage() {
                 href="tel:+5411555512345"
                 className="px-8 py-3 border border-white/30 hover:border-bordo text-white hover:text-bordo transition-colors duration-300"
               >
-                +54 11 5555-1234
+                Comunicarse por whatsapp <Phone className="inline-block ml-2 h-4 w-4" />
               </a>
             </div>
           </motion.div>

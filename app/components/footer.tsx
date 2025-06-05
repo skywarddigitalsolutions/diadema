@@ -40,7 +40,7 @@ export default function Footer() {
             </li>
           </ul>
           <div className="flex space-x-4 mt-6">
-            <a href="#" aria-label="Instagram" className="text-gray-400 hover:text-white transition">
+            <a href="https://www.instagram.com/diadema_arquitectura/" target='_blank' aria-label="Instagram" className="text-gray-400 hover:text-white transition">
               <Instagram size={20} />
             </a>
             <a href="#" aria-label="LinkedIn" className="text-gray-400 hover:text-white transition">
