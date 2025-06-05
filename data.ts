@@ -9,7 +9,7 @@ export interface Obra {
   categoria: string;
   anio: string;
   ubicacion: string;
-  superficie: string; // Opcional, si no se especifica
+  superficie: string;
   imagenes?: string[];}
 
 export const obrasResidenciales: Obra[] = [

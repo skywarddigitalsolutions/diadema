@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, MapPin, Calendar, Ruler, CalendarIcon } from
 import Navbar from "@/app/components/navbar"
 import Footer from "@/app/components/footer"
 import ImageGallery from "./image-gallery"
+import { getRandomItems } from "@/utils/obras"
 
 interface ObraDetailParams {
   slug: string;
@@ -33,9 +34,7 @@ return obra.imagenes || [obra.imagen];
   ]
 
   // Encontrar obras relacionadas (misma categoría)
-  const obrasRelacionadas = obrasResidenciales
-    .filter((o) => o.categoria === obra.categoria && o.slug !== obra.slug)
-    .slice(0, 3)
+  const obrasRelacionadas = getRandomItems(obrasResidenciales, 3);
 
   return (
     <div className="bg-black text-gray-300 min-h-screen">

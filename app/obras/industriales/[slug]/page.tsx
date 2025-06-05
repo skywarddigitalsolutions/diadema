@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, MapPin, Calendar, Ruler, CalendarIcon } from
 import Navbar from "@/app/components/navbar"
 import Footer from "@/app/components/footer"
 import ImageGallery from "./image-gallery"
+import { getRandomItems } from "@/utils/obras"
 
 interface ObraDetailParams {
   slug: string;
@@ -32,10 +33,7 @@ return obra.imagenes || [obra.imagen];
     { icon: <CalendarIcon className="h-5 w-5" />, label: "Superficie", value: obra.superficie || "No especificada" },
   ]
 
-  // Encontrar obras relacionadas (misma categoría)
-  const obrasRelacionadas = obrasIndustriales
-    .filter((o) => o.categoria === obra.categoria && o.slug !== obra.slug)
-    .slice(0, 3)
+  const obrasRelacionadas = getRandomItems(obrasIndustriales, 3);
 
   return (
     <div className="bg-black text-gray-300 min-h-screen">
@@ -126,7 +124,7 @@ return obra.imagenes || [obra.imagen];
         <section className="max-w-7xl mx-auto px-6 py-16 border-t border-gray-800">
           <h2 className="text-2xl font-semibold text-white mb-8 font-serif">Proyectos Relacionados</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {obrasRelacionadas.map((obraRelacionada) => (
+            {obrasRelacionadas.map(obraRelacionada => (
               <Link href={`/obras/${obraRelacionada.slug}`} key={obraRelacionada.slug} className="group">
                 <div className="relative h-64 overflow-hidden">
                   <Image
