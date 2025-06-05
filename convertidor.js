@@ -1,45 +1,34 @@
+// corregir-rotacion.js
 const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
 
-const rootDir = path.join(__dirname, "public", "obras");
+const baseDir = path.join(__dirname, "obras");
 
-function isImage(file) {
-  // Considera extensiones de imágenes a convertir
-  return /\.(jpg|jpeg|png)$/i.test(file);
+function procesarImagen(rutaImagen) {
+  sharp(rutaImagen)
+    .rotate() // 🔁 Corrige la rotación automática según EXIF
+    .toBuffer()
+    .then((data) => {
+      fs.writeFileSync(rutaImagen, data); // Sobrescribe la imagen corregida
+      console.log("✅ Rotada:", rutaImagen);
+    })
+    .catch((err) => {
+      console.error("❌ Error al rotar", rutaImagen, err.message);
+    });
 }
 
-async function convertImageToWebp(imagePath) {
-  const newImagePath = imagePath.replace(/\.(jpg|jpeg|png)$/i, ".webp");
-
-  try {
-    await sharp(imagePath)
-      .webp({ quality: 80 })  // Calidad 80% (podés ajustar)
-      .toFile(newImagePath);
-
-     fs.unlinkSync(imagePath);
-
-    console.log(`✅ Convertido: ${path.basename(imagePath)} → ${path.basename(newImagePath)}`);
-  } catch (error) {
-    console.error(`❌ Error al convertir ${imagePath}:`, error);
-  }
-}
-
-async function processFolder(folderPath) {
-  const files = fs.readdirSync(folderPath);
-
-  for (const file of files) {
-    const fullPath = path.join(folderPath, file);
-    const stat = fs.statSync(fullPath);
+function recorrerCarpetas(dir) {
+  fs.readdirSync(dir).forEach((archivo) => {
+    const rutaCompleta = path.join(dir, archivo);
+    const stat = fs.statSync(rutaCompleta);
 
     if (stat.isDirectory()) {
-      await processFolder(fullPath);
-    } else if (stat.isFile() && isImage(file)) {
-      await convertImageToWebp(fullPath);
+      recorrerCarpetas(rutaCompleta);
+    } else if (rutaCompleta.endsWith(".webp")) {
+      procesarImagen(rutaCompleta);
     }
-  }
+  });
 }
 
-processFolder(rootDir)
-  .then(() => console.log("🚀 Conversión a WebP finalizada."))
-  .catch(console.error);
+recorrerCarpetas(baseDir);
