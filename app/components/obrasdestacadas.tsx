@@ -5,42 +5,16 @@ import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { obrasIndustriales, obrasModulares, obrasResidenciales } from "@/data/data"
 
 export default function ObrasDestacadas() {
-  // Datos de proyectos destacados
-  const proyectosDestacados = [
-    {
-      id: 1,
-      titulo: "OZANAM 446",
-      categoria: "residencial",
-      ubicacion: "Morón, Buenos Aires",
-      anio: "2022",
-      descripcion:
-        "Se realizó una reformación del quincho, transformando en comedor y cocina, con un diseño moderno y funcional.",
-      imagen: "/ozanam.jpg",
-    },
-    {
-      id: 2,
-      titulo: "Glenmore",
-      categoria: "residencial",
-      ubicacion: "Pilar, Buenos Aires",
-      anio: "2023",
-      descripcion:
-        "En proceso de construcción, este proyecto residencial destaca por su diseño contemporáneo y funcionalidad.",
-      imagen: "/glenmore.jpeg",
-    },
-    {
-      id: 3,
-      titulo: "Veredas I",
-      categoria: "industrial",
-      ubicacion: "Maipú, Buenos Aires",
-      anio: "2021",
-      descripcion:
-        "Se trata de una zona en desuso, donde se proyectaron veredas perimetrales",
-      imagen: "/veredas.jpg",
-    },
-  ]
 
+  const slugs: string[] = [
+    "residenciales",
+    "industriales",
+    "modulares"
+  ]
+  const proyectosDestacados = [{ ...obrasResidenciales[0], preSlug: slugs[0] }, { ...obrasIndustriales[1], preSlug: slugs[1] }, { ...obrasModulares[0], preSlug: slugs[2] }];
   const [index, setIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null)
@@ -56,7 +30,7 @@ export default function ObrasDestacadas() {
     setIndex((i) => (i + 1) % length)
   }
 
-  // Autoplay
+
   useEffect(() => {
     if (isAutoPlaying) {
       autoPlayRef.current = setInterval(() => {
@@ -93,8 +67,8 @@ export default function ObrasDestacadas() {
             className="flex transition-transform duration-700 ease-out"
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
-            {proyectosDestacados.map((proyecto) => (
-              <div key={proyecto.id} className="flex-shrink-0 w-full px-4">
+            {proyectosDestacados.map(proyecto => (
+              <div key={proyecto.titulo} className="flex-shrink-0 w-full px-4">
                 <div className="relative overflow-hidden rounded-2xl group h-[400px] md:h-[500px]">
                   <Image
                     src={proyecto.imagen || "/placeholder.svg"}
@@ -111,9 +85,9 @@ export default function ObrasDestacadas() {
                     <h3 className="text-3xl md:text-4xl font-playfair uppercase tracking-[0.05em] mb-4">
                       {proyecto.titulo}
                     </h3>
-                    <p className="text-white/80 max-w-xl mb-6">{proyecto.descripcion}</p>
+                    <p className="text-white/80 max-w-xl mb-6">{proyecto.descripcion[0]}</p>
                     <Link
-                      href={`/obras/${proyecto.id}`}
+                      href={`/obras/${proyecto.preSlug}/${proyecto.slug}`}
                       className="inline-block border border-white text-white px-6 py-3 rounded-full uppercase text-sm font-medium hover:bg-bordo hover:text-white hover:border-bordo transition-colors duration-300"
                     >
                       Ver proyecto
@@ -150,9 +124,8 @@ export default function ObrasDestacadas() {
                 setIsAutoPlaying(false)
                 setIndex(i)
               }}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                i === index ? "bg-bordo w-8" : "bg-white/30 hover:bg-white/50"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${i === index ? "bg-bordo w-8" : "bg-white/30 hover:bg-white/50"
+                }`}
               aria-label={`Ir a slide ${i + 1}`}
             />
           ))}

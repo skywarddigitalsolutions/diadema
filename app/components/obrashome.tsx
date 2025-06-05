@@ -41,10 +41,10 @@ export default function ObrasHome() {
           >
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-serif uppercase text-white mb-4">
-                Obras Domiciliarias
+                Obras Residenciales
               </h3>
               <Link
-                href="/obras-domiciliarias"
+                href="/obras/residenciales"
                 className="border border-white text-white px-6 py-2 rounded-full uppercase tracking-wide font-medium hover:bg-bordo hover:text-white hover:border-bordo transition-colors duration-300"
               >
                 Ver proyectos
@@ -53,7 +53,7 @@ export default function ObrasHome() {
           </div>
           {/* Label fijo */}
           <div className="absolute bottom-4 left-4 md:left-6">
-            <span className="text-white text-2xl font-semibold uppercase">Domiciliaria</span>
+            <span className="text-white text-2xl font-semibold uppercase">Residenciales</span>
           </div>
         </div>
         
@@ -86,7 +86,7 @@ export default function ObrasHome() {
                 Obras Industriales
               </h3>
               <Link
-                href="/obras-industriales"
+                href="/obras/industriales"
                 className="text-white border border-white px-6 py-2 rounded-full uppercase tracking-wide font-medium hover:bg-bordo hover:text-white hover:border-bordo transition-colors duration-300"
               >
                 Ver proyectos
@@ -95,7 +95,7 @@ export default function ObrasHome() {
           </div>
           {/* Label fijo */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-            <span className="text-white text-2xl font-semibold uppercase">Industrial</span>
+            <span className="text-white text-2xl font-semibold uppercase">Industriales</span>
           </div>
         </div>
 
@@ -128,7 +128,7 @@ export default function ObrasHome() {
                 Obras Modulares
               </h3>
               <Link
-                href="/obras-modulares"
+                href="/obras/modulares"
                 className="border border-white text-white px-6 py-2 rounded-full uppercase tracking-wide font-medium hover:bg-bordo hover:text-white hover:border-bordo transition-colors duration-300"
               >
                 Ver proyectos

@@ -6,14 +6,14 @@ import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import Navbar from "@/app/components/navbar"
 import Footer from "@/app/components/footer"
-import { obrasIndustriales } from "@/data"
+import { obrasIndustriales } from "@/data/data"
 // Dummy data for proyectosIndustriales
 
 
 export default function ObrasIndustrialesPage() {
   return (
     <div className="bg-black text-white">
-    <Navbar />
+      <Navbar />
       {/* Back Button */}
       <div className="fixed top-20 left-6 md:left-4 z-40">
         <Link
@@ -31,13 +31,13 @@ export default function ObrasIndustrialesPage() {
           <div>
             <h1 className="text-5xl md:text-7xl font-bodoni mb-6">Obras Industriales</h1>
             <p className="text-gray-400 max-w-2xl">
-           Explorá nuestra selección de proyectos industriales, desde plantas de producción hasta centros logísticos,
+              Explorá nuestra selección de proyectos industriales, desde plantas de producción hasta centros logísticos,
               diseñados para optimizar procesos y maximizar la eficiencia operativa.            </p>
           </div>
         </div>
       </section>
 
-    
+
 
       {/* Projects Grid */}
       <section className="py-8 md:py-16">

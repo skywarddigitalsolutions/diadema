@@ -6,14 +6,14 @@ import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import Navbar from "@/app/components/navbar"
 import Footer from "@/app/components/footer"
-import { obrasModulares } from "@/data"
+import { obrasModulares } from "@/data/data"
 // Dummy data for proyectosModulares
 
 
 export default function ObrasModularesPage() {
   return (
     <div className="bg-black text-white">
-    <Navbar />
+      <Navbar />
       {/* Back Button */}
       <div className="fixed top-20 left-6 md:left-4 z-40">
         <Link
@@ -37,7 +37,7 @@ export default function ObrasModularesPage() {
         </div>
       </section>
 
-    
+
 
       {/* Projects Grid */}
       <section className="py-8 md:py-16">
