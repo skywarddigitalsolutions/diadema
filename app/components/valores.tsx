@@ -22,8 +22,8 @@ const valores = [
 
 export default function Valores() {
   return (
-    <section className="bg-black text-white py-24 px-6" id="Valores">
-      <div className="max-w-4xl mx-auto text-center mb-12">
+    <section className="bg-black text-white py-5 px-6" id="Valores">
+      <div className="max-w-4xl mx-auto text-center py-12">
         <h2 className="text-3xl md:text-4xl font-serif uppercase tracking-wide">
           Nuestros valores
         </h2>

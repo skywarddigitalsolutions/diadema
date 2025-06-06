@@ -17,7 +17,7 @@ export default function ObrasHome() {
       <div className="flex flex-col md:flex-row h-auto md:h-[600px]">
           {/* Panel Domiciliaria */}
         <div
-          className={`group relative flex-1 overflow-hidden transition-all duration-700 h-64 md:h-full ${
+          className={`group relative flex-1 overflow-hidden transition-all duration-700 aspect-[4/3] md:h-full ${
             active === 'residenciales'
               ? 'md:flex-[2]'
               : active === 'industriales' ||
@@ -37,7 +37,7 @@ export default function ObrasHome() {
           />
           {/* Overlay */}
           <div
-            className="absolute inset-0 bg-black/60 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100 opacity-60 flex items-center justify-center px-6"
+            className="absolute inset-0 bg-black/60 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100 opacity-80 flex items-center justify-center px-6"
           >
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-serif uppercase text-white mb-4">
@@ -53,13 +53,13 @@ export default function ObrasHome() {
           </div>
           {/* Label fijo */}
           <div className="absolute bottom-4 left-4 md:left-6">
-            <span className="text-white text-2xl font-semibold uppercase">Residenciales</span>
+            <span className="text-white text-2xl font-semibold uppercase hidden lg:block">Residenciales</span>
           </div>
         </div>
         
         {/* Panel Industrial */}
         <div
-          className={`group relative flex-1 overflow-hidden transition-all duration-700 h-64 md:h-full ${
+          className={`group relative flex-1 overflow-hidden transition-all duration-700 aspect-[4/3] md:h-full ${
             active === 'industriales'
               ? 'md:flex-[2]'
               : active === 'residenciales'|| 
@@ -79,7 +79,7 @@ export default function ObrasHome() {
           />
           {/* Overlay */}
           <div
-            className="absolute inset-0 bg-black/60 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100 opacity-60 flex items-center justify-center px-6"
+            className="absolute inset-0 bg-black/60 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100 opacity-80 flex items-center justify-center px-6"
           >
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-serif uppercase text-white mb-4">
@@ -95,13 +95,13 @@ export default function ObrasHome() {
           </div>
           {/* Label fijo */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-            <span className="text-white text-2xl font-semibold uppercase">Industriales</span>
+            <span className="text-white text-2xl font-semibold uppercase hidden lg:block">Industriales</span>
           </div>
         </div>
 
         {/* Panel Modulares */}
         <div
-          className={`group relative flex-1 overflow-hidden transition-all duration-700 h-64 md:h-full ${
+          className={`group relative flex-1 overflow-hidden transition-all duration-700 aspect-[4/3] md:h-full ${
             active === 'modulares'
               ? 'md:flex-[2]'
               : active === 'residenciales' ||
@@ -121,7 +121,7 @@ export default function ObrasHome() {
           />
           {/* Overlay */}
           <div
-            className="absolute inset-0 bg-black/60 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100 opacity-60 flex items-center justify-center px-6"
+            className="absolute inset-0 bg-black/60 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100 opacity-80 flex items-center justify-center px-6"
           >
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-serif uppercase text-white mb-4">
@@ -137,7 +137,7 @@ export default function ObrasHome() {
           </div>
           {/* Label fijo */}
           <div className="absolute bottom-4 right-4 md:right-6">
-            <span className="text-white text-2xl font-semibold uppercase">Modulares</span>
+            <span className="text-white text-2xl font-semibold uppercase hidden lg:block">Modulares</span>
           </div>
         </div>
       </div>

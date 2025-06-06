@@ -108,7 +108,7 @@ export default function AntesYDespues() {
 
   const activeProject = transformaciones[activeIndex]
   return (
-    <section className="bg-black text-white py-24 px-6" id="AntesyDespues">
+    <section className="bg-black text-white py-12 px-6" id="AntesyDespues">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

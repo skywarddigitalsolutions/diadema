@@ -10,7 +10,7 @@ const estadisticas = [
 
 export default function Stats() {
   return (
-    <section className="bg-black text-white pt-0 md:pb-20 px-6">
+    <section className="bg-black text-white pt-5 md:pb-20 px-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {estadisticas.map((stat, index) => (
           <CounterItem key={index} value={stat.valor} label={stat.etiqueta} suffix={stat.sufijo} />

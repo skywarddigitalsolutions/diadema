@@ -156,7 +156,7 @@ export default function Navbar() {
 
       {/* DROPDOWN MOBILE - RENDERIZADO FIJO CERCA DEL HEADER */}
       {isMobile && menuOpen && (
-        <div className="fixed top-[56px] left-0 w-full z-40 bg-black/50 backdrop-blur-md px-6 py-4">
+        <div className="fixed top-[56px] left-0 w-full z-50 bg-black/50 backdrop-blur-md px-6 py-4">
           <nav className="flex flex-col gap-4 text-white text-base font-sans font-medium uppercase tracking-wide">
             {navItems.map((item) =>
               item.hasDropdown ? (
