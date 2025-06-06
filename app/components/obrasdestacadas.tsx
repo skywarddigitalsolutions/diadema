@@ -14,7 +14,7 @@ export default function ObrasDestacadas() {
     "industriales",
     "modulares"
   ]
-  const proyectosDestacados = [{ ...obrasResidenciales[0], preSlug: slugs[0] }, { ...obrasIndustriales[1], preSlug: slugs[1] }, { ...obrasModulares[0], preSlug: slugs[2] }];
+  const proyectosDestacados = [{ ...obrasResidenciales[0], preSlug: slugs[0] }, { ...obrasIndustriales[8], preSlug: slugs[1] }, { ...obrasModulares[0], preSlug: slugs[2] }];
   const [index, setIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null)
