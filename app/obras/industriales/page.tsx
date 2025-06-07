@@ -14,7 +14,7 @@ export default function ObrasIndustrialesPage() {
     <div className="bg-black text-white">
       <Navbar />
       {/* Back Button */}
-      <div className="fixed top-20 left-6 md:left-4 z-40">
+      <div className=" pt-20 ml-4 z-40">
         <Link
           href="/obras"
           className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300"
@@ -25,7 +25,7 @@ export default function ObrasIndustrialesPage() {
       </div>
 
       {/* Page Header */}
-      <section className="pt-40 pb-16">
+      <section className="pt-8 pb-16">
         <div className="container mx-auto px-6 md:px-12">
           <div>
             <h1 className="text-5xl md:text-7xl font-bodoni mb-6">Obras Industriales</h1>
@@ -41,7 +41,7 @@ export default function ObrasIndustrialesPage() {
       {/* Projects Grid */}
       <section className="py-8 md:py-16">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-18 md:gap-12">
             {obrasIndustriales.map((proyecto) => (
               <div key={proyecto.id}>
                 <Link href={`/obras/industriales/${proyecto.slug}`} className="block group">

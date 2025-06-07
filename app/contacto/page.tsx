@@ -6,6 +6,7 @@ import { motion, useInView, useAnimation } from "framer-motion"
 import { MapPin, Phone, Mail, Clock, Send, ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Navbar from "@/app/components/navbar"
+import Footer from "../components/footer"
 
 export default function ContactoPage() {
   const [formState, setFormState] = useState({
@@ -346,39 +347,6 @@ export default function ContactoPage() {
                   </div>
                 </div>
               </motion.div>
-
-              {/* Mapa */}
-              <motion.div
-                ref={mapRef}
-                initial={{ opacity: 0, y: 30 }}
-                animate={mapControls}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="relative"
-              >
-                <div className="absolute -top-6 -left-6 w-12 h-12 border-t-2 border-l-2 border-bordo opacity-50"></div>
-                <div className="absolute -bottom-6 -right-6 w-12 h-12 border-b-2 border-r-2 border-bordo opacity-50"></div>
-
-                <div className="h-[400px] bg-[#0f0f0f] overflow-hidden relative">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168878895223!2d-58.43359492427035!3d-34.60373887295282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca1e8494b3d3%3A0x2f871c393e89dd54!2sLambar%C3%A9%201055%2C%20C1185ABW%20CABA!5e0!3m2!1ses-419!2sar!4v1683650123678!5m2!1ses-419!2sar"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={false}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Ubicación de Diadema Arquitectura"
-                    className="grayscale contrast-125 mix-blend-luminosity"
-                  ></iframe>
-
-                  <div className="absolute bottom-6 left-6 bg-black/80 backdrop-blur-sm p-4 rounded-lg border-l-2 border-bordo">
-                    <div className="flex items-center">
-                      <MapPin className="text-bordo mr-2" size={20} />
-                      <span className="text-white">Av. Libertador 4500, Buenos Aires</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </div>
         </div>
@@ -429,6 +397,8 @@ export default function ContactoPage() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   )
 }

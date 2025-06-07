@@ -38,14 +38,9 @@ export default function ObrasPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
-      {/* Título para móviles (solo visible en móviles) */}
-      <div className="md:hidden pt-32 pb-8 px-6">
-        <h1 className="text-4xl font-bodoni mb-4">Nuestras Obras</h1>
-        <p className="text-gray-400 text-sm">Selecciona una categoría para explorar nuestros proyectos</p>
-      </div>
 
       {/* Categorías en pantalla completa */}
-      <div className="flex flex-col md:flex-row md:h-screen md:pt-20 pb-12">
+      <div className="flex flex-col md:flex-row md:h-screen pt-20 pb-12">
         {categorias.map((categoria, index) => (
           <div
             key={categoria.id}
