@@ -5,18 +5,18 @@ import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import Navbar from "@/app/components/navbar"
 import Footer from "@/app/components/footer"
-import { obrasResidenciales } from "@/data/data"
-// Dummy data for proyectosResidenciales
+import { obrasIndustriales } from "@/data/data"
+// Dummy data for proyectosIndustriales
 
 
-export default function ObrasResidencialesPage() {
+export default function ObrasIndustrialesPage() {
   return (
     <div className="bg-black text-white">
       <Navbar />
       {/* Back Button */}
-      <div className="pt-20 ml-4 z-40">
+      <div className=" pt-20 ml-4 z-40">
         <Link
-          href="/obras"
+          href="/proyectos"
           className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -28,11 +28,10 @@ export default function ObrasResidencialesPage() {
       <section className="pt-8 pb-16">
         <div className="container mx-auto px-6 md:px-12">
           <div>
-            <h1 className="text-5xl md:text-7xl font-bodoni mb-6">Obras Residenciales</h1>
+            <h1 className="text-5xl md:text-7xl font-bodoni mb-6">Proyectos Industriales</h1>
             <p className="text-gray-400 max-w-2xl">
-              Explorá nuestra selección de proyectos residenciales, desde casas unifamiliares hasta complejos
-              multifamiliares, diseñados con atención al detalle y enfoque en la calidad de vida.
-            </p>
+              Explorá nuestra selección de proyectos industriales, desde plantas de producción hasta centros logísticos,
+              diseñados para optimizar procesos y maximizar la eficiencia operativa.            </p>
           </div>
         </div>
       </section>
@@ -43,9 +42,9 @@ export default function ObrasResidencialesPage() {
       <section className="py-8 md:py-16">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-18 md:gap-12">
-            {obrasResidenciales.map((proyecto) => (
+            {obrasIndustriales.map((proyecto) => (
               <div key={proyecto.id}>
-                <Link href={`/obras/residenciales/${proyecto.slug}`} className="block group">
+                <Link href={`/proyectos/industriales/${proyecto.slug}`} className="block group">
                   <div className="relative overflow-hidden rounded-lg mb-4">
                     <Image
                       src={proyecto.imagen || "/placeholder.svg"}
@@ -64,7 +63,7 @@ export default function ObrasResidencialesPage() {
                   </div>
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-bordo text-sm font-medium">Residencial</span>
+                      <span className="text-bordo tex t-sm font-medium">Industrial</span>
                       <span className="text-gray-400 text-sm">{proyecto.anio}</span>
                     </div>
                     <h3 className="text-xl font-bold group-hover:text-bordo transition-colors duration-300">

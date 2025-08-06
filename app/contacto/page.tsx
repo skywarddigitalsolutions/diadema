@@ -387,10 +387,10 @@ export default function ContactoPage() {
                   Contactar ahora
                 </a>
                 <a
-                  href="/obras"
+                  href="/proyectos"
                   className="px-8 py-3 border border-white/30 hover:border-bordo text-white hover:text-bordo transition-colors duration-300"
                 >
-                  Ver nuestras obras
+                  Ver nuestros proyectos
                 </a>
               </div>
             </motion.div>

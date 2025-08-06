@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation"
-import { obrasResidenciales } from "@/data/data"
+import { obrasModulares } from "@/data/data"
 import Image from "next/image"
 import Link from "next/link"
 import { ChevronLeft, ChevronRight, MapPin, Calendar, Ruler, CalendarIcon } from "lucide-react"
 import Navbar from "@/app/components/navbar"
 import Footer from "@/app/components/footer"
 import ImageGallery from "./image-gallery"
-import { getRandomItems } from "@/utils/obras"
+import { getRandomItems } from "@/utils/proyectos"
 
 interface ObraDetailParams {
   slug: string;
@@ -14,7 +14,7 @@ interface ObraDetailParams {
 
 export default async function ObraDetailPage({ params }: { params: Promise<ObraDetailParams> }) {
   const { slug } = await params;
-  const obra = obrasResidenciales.find((obra) => obra.slug === slug);
+  const obra = obrasModulares.find((obra) => obra.slug === slug);
 
   if (!obra) return notFound()
 
@@ -34,7 +34,7 @@ export default async function ObraDetailPage({ params }: { params: Promise<ObraD
   ]
 
   // Encontrar obras relacionadas (misma categoría)
-  const obrasRelacionadas = getRandomItems(obrasResidenciales, 3);
+  const obrasRelacionadas = getRandomItems(obrasModulares, 3);
 
   return (
     <div className="bg-black text-gray-300 min-h-screen">
@@ -43,11 +43,11 @@ export default async function ObraDetailPage({ params }: { params: Promise<ObraD
       {/* Botón de volver con animación sutil */}
       <div className="fixed top-20 left-6 md:left-4 z-40">
         <Link
-          href="/obras/residenciales"
+          href="/proyectos/modulares"
           className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300 group"
         >
           <ChevronLeft className="h-5 w-5 transform group-hover:-translate-x-1 transition-transform duration-300" />
-          <span>Volver a residenciales</span>
+          <span>Volver a modulares</span>
         </Link>
       </div>
 
@@ -126,7 +126,7 @@ export default async function ObraDetailPage({ params }: { params: Promise<ObraD
           <h2 className="text-2xl font-semibold text-white mb-8 font-serif">Proyectos Relacionados</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {obrasRelacionadas.map((obraRelacionada) => (
-              <Link href={`/obras/${obraRelacionada.slug}`} key={obraRelacionada.slug} className="group">
+              <Link href={`/proyectos/${obraRelacionada.slug}`} key={obraRelacionada.slug} className="group">
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     src={obraRelacionada.imagen || "/placeholder.svg"}

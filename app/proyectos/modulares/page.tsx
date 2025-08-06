@@ -16,7 +16,7 @@ export default function ObrasModularesPage() {
       {/* Back Button */}
       <div className="top-20 ml-4 z-40">
         <Link
-          href="/obras"
+          href="/proyectos"
           className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -28,7 +28,7 @@ export default function ObrasModularesPage() {
       <section className="pt-8 pb-16">
         <div className="container mx-auto px-6 md:px-12">
           <div>
-            <h1 className="text-5xl md:text-7xl font-bodoni mb-6">Obras Modulares</h1>
+            <h1 className="text-5xl md:text-7xl font-bodoni mb-6">Arquitectura Modular</h1>
             <p className="text-gray-400 max-w-2xl">
               Explorá nuestra selección de proyectos modulares, diseñados con atención al detalle y enfoque en la calidad de vida.
             </p>
@@ -44,7 +44,7 @@ export default function ObrasModularesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-18 md:gap-12">
             {obrasModulares.map((proyecto) => (
               <div key={proyecto.id}>
-                <Link href={`/obras/modulares/${proyecto.slug}`} className="block group">
+                <Link href={`/proyectos/modulares/${proyecto.slug}`} className="block group">
                   <div className="relative overflow-hidden rounded-lg mb-4">
                     <Image
                       src={proyecto.imagen || "/placeholder.svg"}

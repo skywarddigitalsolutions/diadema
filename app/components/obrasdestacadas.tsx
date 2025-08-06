@@ -87,7 +87,7 @@ export default function ObrasDestacadas() {
                     </h3>
                     <p className="text-white/80 max-w-xl mb-6">{proyecto.descripcion[0]}</p>
                     <Link
-                      href={`/obras/${proyecto.preSlug}/${proyecto.slug}`}
+                      href={`/proyectos/${proyecto.preSlug}/${proyecto.slug}`}
                       className="inline-block border border-white text-white px-6 py-3 rounded-full uppercase text-sm font-medium hover:bg-bordo hover:text-white hover:border-bordo transition-colors duration-300"
                     >
                       Ver proyecto

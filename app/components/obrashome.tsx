@@ -7,10 +7,10 @@ export default function ObrasHome() {
   const [active, setActive] = useState<'residenciales' | 'industriales' | 'modulares' | null>(null);
 
   return (
-    <section className="pt-12 bg-black relative" id="Obras">
+    <section className="pt-12 bg-black relative" id="Proyectos">
       {/* Título principal con tracking reducido */}
       <h2 className="text-white text-4xl md:text-5xl uppercase text-center pb-12 font-serif tracking-wide ">
-        Obras
+        Proyectos
       </h2>
 
       {/* Contenedor responsive */}
@@ -30,7 +30,7 @@ export default function ObrasHome() {
         >
           <Image
             src="/residenciales.jpg"
-            alt="Obras Domiciliarias"
+            alt="Domiciliarias"
             className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
             height={600} 
             width={800}
@@ -41,10 +41,10 @@ export default function ObrasHome() {
           >
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-serif uppercase text-white mb-4">
-                Obras Residenciales
+               Residenciales
               </h3>
               <Link
-                href="/obras/residenciales"
+                href="/proyectos/residenciales"
                 className="border border-white text-white px-6 py-2 rounded-full uppercase tracking-wide font-medium hover:bg-bordo hover:text-white hover:border-bordo transition-colors duration-300"
               >
                 Ver proyectos
@@ -72,7 +72,7 @@ export default function ObrasHome() {
         >
           <Image
             src="/industriales.jpg"
-            alt="Obras Industriales"
+            alt="Industriales"
             className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
             height={600}
             width={800}
@@ -83,10 +83,10 @@ export default function ObrasHome() {
           >
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-serif uppercase text-white mb-4">
-                Obras Industriales
+               Industriales
               </h3>
               <Link
-                href="/obras/industriales"
+                href="/proyectos/industriales"
                 className="text-white border border-white px-6 py-2 rounded-full uppercase tracking-wide font-medium hover:bg-bordo hover:text-white hover:border-bordo transition-colors duration-300"
               >
                 Ver proyectos
@@ -114,7 +114,7 @@ export default function ObrasHome() {
         >
           <Image
             src="/modulares.png"
-            alt="Obras Modulares"
+            alt="Modulares"
             className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
             height={600}
             width={800}
@@ -125,10 +125,10 @@ export default function ObrasHome() {
           >
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-serif uppercase text-white mb-4">
-                Obras Modulares
+               Modulares
               </h3>
               <Link
-                href="/obras/modulares"
+                href="/proyectos/modulares"
                 className="border border-white text-white px-6 py-2 rounded-full uppercase tracking-wide font-medium hover:bg-bordo hover:text-white hover:border-bordo transition-colors duration-300"
               >
                 Ver proyectos

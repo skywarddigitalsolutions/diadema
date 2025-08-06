@@ -1,6 +1,6 @@
-import { Obra } from "@/data/data";
+import {Proyecto } from "@/data/data";
 
-export const getRandomItems = (arr: Obra[], n: number) => {
+export const getRandomItems = (arr: Proyecto[], n: number) => {
     const arrayCopy = [...arr];
     for (let i = arrayCopy.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));

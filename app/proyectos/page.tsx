@@ -10,7 +10,7 @@ export default function ObrasPage() {
   // Estado para controlar la categoría en hover
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
 
-  // Categorías de obras
+  // Categorías de proyectos
   const categorias = [
     {
       id: "residenciales",
@@ -81,10 +81,10 @@ export default function ObrasPage() {
                 </p>
 
                 <Link
-                  href={`/obras/${categoria.id}`}
+                  href={`/proyectos/${categoria.id}`}
                   className="inline-block border border-white rounded-lg hover:border-bordo hover:bg-bordo px-8 py-3 text-white transition-all duration-300"
                 >
-                  Ver obras
+                  Ver proyectos
                 </Link>
               </motion.div>
             </div>
@@ -102,9 +102,9 @@ export default function ObrasPage() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 gap-8 text-center">
             {[
-              { valor: "50+", texto: "Proyectos Residenciales" },
+              { valor: "50+", texto: "Residenciales" },
               { valor: "25+", texto: "Proyectos Industriales" },
-              { valor: "30+", texto: "Proyectos Modulares" },
+              { valor: "30+", texto: "Arquitectura Modular" },
             ].map((stat, index) => (
               <div key={index} className="py-4">
                 <div className="text-5xl font-bold text-bordo mb-2">{stat.valor}</div>

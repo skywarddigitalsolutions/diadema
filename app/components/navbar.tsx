@@ -7,15 +7,15 @@ import Image from "next/image"
 
 const navItems = [
   { label: "Inicio", href: "/" },
-  { label: "Obras", href: "/obras", hasDropdown: true },
+  { label: "Proyectos", href: "/proyectos", hasDropdown: true },
   { label: "Nosotros", href: "/nosotros" },
   { label: "Contacto", href: "/contacto" },
 ]
 
 const dropdownItems = [
-  { label: "Residenciales", href: "/obras/residenciales", image: "/residenciales.jpg" },
-  { label: "Industriales", href: "/obras/industriales", image: "/industriales.jpg" },
-  { label: "Modulares", href: "/obras/modulares", image: "/modulares.png" }, // Cambiar imagen cuando esté disponible
+  { label: "Residenciales", href: "/proyectos/residenciales", image: "/residenciales.jpg" },
+  { label: "Industriales", href: "/proyectos/industriales", image: "/industriales.jpg" },
+  { label: "Modulares", href: "/proyectos/modulares", image: "/modulares.png" }, // Cambiar imagen cuando esté disponible
 ]
 
 export default function Navbar() {

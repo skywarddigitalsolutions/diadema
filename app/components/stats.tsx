@@ -3,7 +3,7 @@ import { useRef, useEffect, useState } from "react"
 
 // Datos de estadísticas
 const estadisticas = [
-  { valor: 10, etiqueta: "Obras industriales", sufijo: "+" },
+  { valor: 10, etiqueta: "Proyectos industriales", sufijo: "+" },
   { valor: 20, etiqueta: "Remodelaciones y viviendas", sufijo: "+" },
   { valor: 10, etiqueta: "Años de experiencia", sufijo: "+" },
 ]
